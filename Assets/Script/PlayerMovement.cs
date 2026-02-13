@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
         // handle drag 
         if (grounded)
-            rb.drag = groundDrag;
+            rb.linearDamping = groundDrag;
         else
-            rb.drag = 0;
+            rb.linearDamping = 0;
     }
 
     private void FixedUpdate()
