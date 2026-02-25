@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: AngerDialouge
+  m_Name: Phone
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - "You came back.\n\n "
-  - "They found you again, didn't they?\n "
-  - 'They''re still looking for you '
+  - 'The phone is broken I can''t use it '
+  - 'They kept calling  '
+  - Every day. Every Hour
+  - ....
+  - 'But now it is only silnce '
+  - 'I like it  '
   insideRoomLines: []
   HintLines: []
   afterSolvedLines: []

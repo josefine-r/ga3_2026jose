@@ -8,6 +8,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public float textSpeed = 0.03f;
 
+    private void Start()
+    {
+        ShowLine("Can you hear me?");
+    }
+
     private void Awake()
     {
         Instance = this;
