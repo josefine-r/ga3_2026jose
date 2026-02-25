@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: FearDialogue
-  m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
-  outsideDoorLines: []
-  insideRoomLines: []
-  HintLines: []
-  afterSolvedLines: []
+  m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
+  m_Name: ShameQuestion
+  m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
+  questionText: 
+  optionA: 
+  optionB: 
+  emotionA: 0
+  emotionB: 0

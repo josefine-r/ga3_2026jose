@@ -3,10 +3,13 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    
     public static DialogueManager Instance;
 
     public TextMeshProUGUI dialogueText;
     public float textSpeed = 0.03f;
+
+    public bool isTalking = false;
 
     private void Start()
     {
@@ -26,6 +29,8 @@ public class DialogueManager : MonoBehaviour
 
     System.Collections.IEnumerator TypeLine(string line)
     {
+        isTalking = true;
+
         dialogueText.text = "";
 
         foreach (char c in line)
@@ -33,5 +38,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+
+        isTalking = false;
     }
 }
