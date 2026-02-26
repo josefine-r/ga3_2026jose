@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
   m_Name: DenialQuestion
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
-  questionText: 
-  optionA: 
-  optionB: 
+  questionText: If something makes the pain disappear.. is it wrong to use it?
+  optionA: No. I needed it.
+  optionB: 'Yes. I was avoiding reality '
   emotionA: 0
-  emotionB: 0
+  emotionB: 7

@@ -6,9 +6,11 @@ public class PrisonDoor : MonoBehaviour
 {
     public PrisonerQuestion question;
 
+
     public PrisonerDialogue dialogue;
     private bool playerNearby;
     private bool opened = false;
+
 
     [Header("Code Lock")]
     public string correctCode = "1234";
@@ -16,6 +18,12 @@ public class PrisonDoor : MonoBehaviour
 
     private int outsideIndex = 0;
     private int insideIndex = 0;
+
+
+    private bool awaitingQuestion = false;
+    private bool questionAsked = false;
+
+    private int timesTalked = 0;
 
     void Update()
     {
@@ -27,16 +35,41 @@ public class PrisonDoor : MonoBehaviour
 
     void TalkOutside()
     {
-        if (dialogue.outsideDoorLines.Length == 0) return;
+        if (dialogue == null) return;
 
-        DialogueManager.Instance.ShowLine(
-            dialogue.outsideDoorLines[outsideIndex]
-        );
+        // If puzzle solved and question not asked yet
+        if (awaitingQuestion && !questionAsked)
+        {
+            questionAsked = true;
+            awaitingQuestion = false;
 
-        outsideIndex++;
+            AskDoorQuestion();
+            return;
+        }
 
-        if (outsideIndex >= dialogue.outsideDoorLines.Length)
-            outsideIndex = 0;
+        timesTalked++;
+
+        if (!unlocked)
+        {
+            if (timesTalked <= 2 && dialogue.outsideDoorLines.Length > 0)
+            {
+                int index = Random.Range(0, dialogue.outsideDoorLines.Length);
+                DialogueManager.Instance.ShowLine(dialogue.outsideDoorLines[index]);
+            }
+            else if (dialogue.hintLines.Length > 0)
+            {
+                int index = Random.Range(0, dialogue.hintLines.Length);
+                DialogueManager.Instance.ShowLine(dialogue.hintLines[index]);
+            }
+        }
+        else
+        {
+            if (dialogue.afterSolvedLines.Length > 0)
+            {
+                int index = Random.Range(0, dialogue.afterSolvedLines.Length);
+                DialogueManager.Instance.ShowLine(dialogue.afterSolvedLines[index]);
+            }
+        }
     }
 
     public void EnterRoom()
@@ -62,13 +95,19 @@ public class PrisonDoor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerNearby = true;
+            InteractionUI.Instance.Show("Press E to Talk");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerNearby = false;
+            InteractionUI.Instance.Hide();
+        }
     }
 
     public void CheckCode(string enteredCode)
@@ -78,13 +117,13 @@ public class PrisonDoor : MonoBehaviour
         if (enteredCode == correctCode)
         {
             unlocked = true;
+            awaitingQuestion = true;
 
-            DialogueManager.Instance.ShowLine("...the lock clicks open.");
-
-            AskDoorQuestion(); // ? THIS triggers the question
+            DialogueManager.Instance.ShowLine("...the lock disengages.");
 
             GameState.Instance.doorsUnlocked++;
         }
+
         else
         {
             DialogueManager.Instance.ShowLine("The keypad flashes red.");

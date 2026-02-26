@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: SadnessDialouge
+  m_Name: Guilt
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
-  outsideDoorLines: []
-  insideRoomLines: []
-  HintLines: []
+  outsideDoorLines:
+  - 'I was waiting '
+  - 'You know why i''m here '
+  insideRoomLines:
+  - You remember now
+  HintLines:
+  - 
   afterSolvedLines: []

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: FearDialouge
+  m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
+  outsideDoorLines:
+  - They followed you here.
+  - You heard footsteps last night.
+  - You shouldn't stand in the open.
+  - 'They always check the hallways first. '
+  hintLines:
+  - You always looked out the window
+  - 'And somethime you could see it '
+  - 'only if you looked closely '
+  insideRoomLines:
+  - You didn't sleep that night
+  - every sound woke you up
+  - 'you were waiting for a knock '
+  afterSolvedLines:
+  - You were safe.. but you didn't feel safe.
+  - You kept running even when nobody chased you.

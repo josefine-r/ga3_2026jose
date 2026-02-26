@@ -10,9 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: GuiltDialouge
+  m_Name: Hope
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
-  outsideDoorLines: []
-  insideRoomLines: []
-  HintLines: []
-  afterSolvedLines: []
+  outsideDoorLines:
+  - 'You came back '
+  - 'That means something '
+  - 'You didn''t give up completely '
+  insideRoomLines:
+  - 'you''re still here '
+  - 'You can still change '
+  HintLines:
+  - 'you followed the light '
+  - You looked for a way out
+  afterSolvedLines:
+  - 'You can face it '

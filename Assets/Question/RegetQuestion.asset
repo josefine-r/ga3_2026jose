@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
   m_Name: RegetQuestion
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
-  questionText: 
-  optionA: 
-  optionB: 
-  emotionA: 0
-  emotionB: 0
+  questionText: If you could go back... would you change it?
+  optionA: 'Yes, i would answer '
+  optionB: No... it would't matter
+  emotionA: 7
+  emotionB: 4

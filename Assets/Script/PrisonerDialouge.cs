@@ -10,10 +10,10 @@ public class PrisonerDialouge : MonoBehaviour
         public string[] outsideDoorLines;
 
         [TextArea(3, 8)]
-        public string[] insideRoomLines;
+        public string[] hintLines;
 
         [TextArea(3, 8)]
-        public string[] HintLines;
+        public string[] insideRoomLines;
 
         [TextArea(3, 8)]
         public string[] afterSolvedLines;
