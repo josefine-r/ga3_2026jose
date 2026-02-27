@@ -10,6 +10,8 @@ public class ChoiceManager : MonoBehaviour
     private bool waitingForChoice;
     private System.Action<int> callback;
 
+    private bool endingChosen = false;
+
    
     void Awake()
     {
@@ -72,6 +74,25 @@ public class ChoiceManager : MonoBehaviour
             case EmotionType.Shame: g.shame++; break;
             case EmotionType.Hope: g.hope++; break;
             case EmotionType.Guilt: g.guilt++; break;
+        }
+
+        GameState.Instance.questionsAnswered++;
+        CheckForEnding();
+    }
+
+    void CheckForEnding()
+    {
+        if (endingChosen) return;
+
+        if (GameState.Instance.questionsAnswered >= GameState.Instance.totalPrisoners)
+        {
+            endingChosen = true;
+
+            Debug.Log("All questions answered. Choosing ending...");
+
+            FinalDoorJudge judge = FindFirstObjectByType<FinalDoorJudge>();
+            if (judge != null)
+                judge.DecideDoor();
         }
     }
 }

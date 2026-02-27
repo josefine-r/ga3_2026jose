@@ -17,14 +17,13 @@ MonoBehaviour:
   - You avoided everyone
   - 'You didn''t want them to worry '
   - 'You stayed alone '
+  hintLines:
+  - '1 hint: When sad times give you something to think about'
+  - '2 Hint: water to have memories '
   insideRoomLines:
   - 'You felt empty '
   - 'You didn''t care anymore '
   - 'Nothing mattered that night '
-  HintLines:
-  - Your phone kept lightining up
-  - 'You turned it face down '
-  - You could't read it.
   afterSolvedLines:
   - 'You weren''t tired '
   - You were giving up

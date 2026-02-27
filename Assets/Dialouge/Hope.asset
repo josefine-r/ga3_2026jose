@@ -16,11 +16,11 @@ MonoBehaviour:
   - 'You came back '
   - 'That means something '
   - 'You didn''t give up completely '
+  hintLines:
+  - '1 Hint: on a paper there will be somthing'
+  - '2 Hint: two books that looks alike will have the answer'
   insideRoomLines:
   - 'you''re still here '
   - 'You can still change '
-  HintLines:
-  - 'you followed the light '
-  - You looked for a way out
   afterSolvedLines:
   - 'You can face it '

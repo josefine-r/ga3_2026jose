@@ -1,43 +1,57 @@
-using JetBrains.Annotations;
 using UnityEngine;
 using static PrisonerDialouge;
 
 public class PrisonDoor : MonoBehaviour
 {
+    [Header("Dialogue & Question")]
+    public PrisonerDialogue dialogue;
     public PrisonerQuestion question;
 
-
-    public PrisonerDialogue dialogue;
-    private bool playerNearby;
-    private bool opened = false;
-
-
-    [Header("Code Lock")]
+    [Header("Door Code")]
     public string correctCode = "1234";
+
+    private bool playerNearby = false;
     private bool unlocked = false;
 
-    private int outsideIndex = 0;
-    private int insideIndex = 0;
-
-
+    // Question flow
     private bool awaitingQuestion = false;
     private bool questionAsked = false;
 
-    private int timesTalked = 0;
+    // Dialogue progression
+    private int normalIndex = 0;
+    private int hintIndex = 0;
+    private int solvedIndex = 0;
+
+    public Animator prisondoorAnimator;
+
+    void Start()
+    {
+        // Reset runtime states
+        unlocked = false;
+        awaitingQuestion = false;
+        questionAsked = false;
+
+        normalIndex = 0;
+        hintIndex = 0;
+        solvedIndex = 0;
+    }
 
     void Update()
     {
-        if (playerNearby && Input.GetKeyDown(KeyCode.E))
+        // Talk to door
+        if (playerNearby && Input.GetKeyDown(KeyCode.E) && !DialogueManager.Instance.isTalking)
         {
             TalkOutside();
         }
     }
 
+    // ===================== TALKING =====================
+
     void TalkOutside()
     {
         if (dialogue == null) return;
 
-        // If puzzle solved and question not asked yet
+        // After unlocking, the NEXT talk asks the question
         if (awaitingQuestion && !questionAsked)
         {
             questionAsked = true;
@@ -47,50 +61,80 @@ public class PrisonDoor : MonoBehaviour
             return;
         }
 
-        timesTalked++;
-
+        // BEFORE unlocking
         if (!unlocked)
         {
-            if (timesTalked <= 2 && dialogue.outsideDoorLines.Length > 0)
+            // Normal conversation lines
+            if (normalIndex < dialogue.outsideDoorLines.Length)
             {
-                int index = Random.Range(0, dialogue.outsideDoorLines.Length);
-                DialogueManager.Instance.ShowLine(dialogue.outsideDoorLines[index]);
+                DialogueManager.Instance.ShowLine(dialogue.outsideDoorLines[normalIndex]);
+                normalIndex++;
             }
-            else if (dialogue.hintLines.Length > 0)
+            // Hint lines
+            else if (hintIndex < dialogue.hintLines.Length)
             {
-                int index = Random.Range(0, dialogue.hintLines.Length);
-                DialogueManager.Instance.ShowLine(dialogue.hintLines[index]);
+                DialogueManager.Instance.ShowLine(dialogue.hintLines[hintIndex]);
+                hintIndex++;
             }
+        }
+        // AFTER unlocking and question answered
+        else
+        {
+            if (solvedIndex < dialogue.afterSolvedLines.Length)
+            {
+                DialogueManager.Instance.ShowLine(dialogue.afterSolvedLines[solvedIndex]);
+                solvedIndex++;
+            }
+        }
+    }
+
+    // ===================== CODE SYSTEM =====================
+
+    public void CheckCode(string enteredCode)
+    {
+        if (unlocked) return;
+
+        if (enteredCode == correctCode)
+        {
+            unlocked = true;
+            awaitingQuestion = true;
+
+            DialogueManager.Instance.ShowLine("...the lock disengages.");
+            GameState.Instance.doorsUnlocked++;
         }
         else
         {
-            if (dialogue.afterSolvedLines.Length > 0)
-            {
-                int index = Random.Range(0, dialogue.afterSolvedLines.Length);
-                DialogueManager.Instance.ShowLine(dialogue.afterSolvedLines[index]);
-            }
+            DialogueManager.Instance.ShowLine("The keypad flashes red.");
         }
     }
 
-    public void EnterRoom()
-    {
-        if (dialogue.insideRoomLines.Length == 0) return;
-
-        DialogueManager.Instance.ShowLine(
-            dialogue.insideRoomLines[insideIndex]
-        );
-
-        insideIndex++;
-
-        if (insideIndex >= dialogue.insideRoomLines.Length)
-            insideIndex = 0;
-    }
+    // ===================== QUESTION =====================
 
     public void AskDoorQuestion()
     {
         if (question != null)
             ChoiceManager.Instance.AskQuestion(question);
     }
+
+    // ===================== ENDING OPEN =====================
+
+    public void OpenDoor()
+    {
+        unlocked = true;
+
+        // play animation
+        if (prisondoorAnimator != null)
+            prisondoorAnimator.SetTrigger("Open");
+
+        // disable colliders so player can enter
+        Collider[] cols = GetComponents<Collider>();
+        foreach (Collider c in cols)
+            c.enabled = false;
+
+        DialogueManager.Instance.ShowLine("...one of the doors opens.");
+    }
+
+    // ===================== PLAYER DETECTION =====================
 
     private void OnTriggerEnter(Collider other)
     {
@@ -109,37 +153,4 @@ public class PrisonDoor : MonoBehaviour
             InteractionUI.Instance.Hide();
         }
     }
-
-    public void CheckCode(string enteredCode)
-    {
-        if (unlocked) return;
-
-        if (enteredCode == correctCode)
-        {
-            unlocked = true;
-            awaitingQuestion = true;
-
-            DialogueManager.Instance.ShowLine("...the lock disengages.");
-
-            GameState.Instance.doorsUnlocked++;
-        }
-
-        else
-        {
-            DialogueManager.Instance.ShowLine("The keypad flashes red.");
-        }
-    }
-
-    public void OpenDoor()
-    {
-        unlocked = true;
-
-        // stop the player from interacting again
-        GetComponent<Collider>().enabled = false;
-
-        DialogueManager.Instance.ShowLine("The door slowly opens...");
-    }
-
-
-
 }

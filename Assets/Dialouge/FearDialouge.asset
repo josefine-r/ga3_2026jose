@@ -18,9 +18,9 @@ MonoBehaviour:
   - You shouldn't stand in the open.
   - 'They always check the hallways first. '
   hintLines:
-  - You always looked out the window
-  - 'And somethime you could see it '
-  - 'only if you looked closely '
+  - '1 Hint: You always looked out the window'
+  - '2 Hint: And somethime you could see it '
+  - '3 Hint: only if you looked closely '
   insideRoomLines:
   - You didn't sleep that night
   - every sound woke you up

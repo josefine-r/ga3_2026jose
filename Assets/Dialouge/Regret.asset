@@ -16,14 +16,13 @@ MonoBehaviour:
   - You remember the time
   - 'You checked the clock again '
   - 'You still think about that moment '
+  hintLines:
+  - '1 hint: the moment things dosen work there will always be somthing there '
+  - "2 Hint: two times will fix tings but what will that tell you?\n "
   insideRoomLines:
   - 'The phone was ringing '
   - 'You saw the name '
   - You waited
-  HintLines:
-  - 'The clock never changed '
-  - 'You stared at it '
-  - You knew what it meant
   afterSolvedLines:
   - You had time
   - You chose not to answer

@@ -16,13 +16,12 @@ MonoBehaviour:
   - 'Don''t let them see you '
   - They would hate you
   - 'You hid the truth '
+  hintLines:
+  - 1 hint do things that you don't like
+  - '2 hint: there is norhing worng being broken is there? '
   insideRoomLines:
   - 'you didn''t recognize yourself '
   - You could't look
-  HintLines:
-  - 'You avoided mirrors '
-  - You kept the lights off
-  - 'You styed in the dark '
   afterSolvedLines:
   - You were afraid of their judgment
   - 'More than your own '

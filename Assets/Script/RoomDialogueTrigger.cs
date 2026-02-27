@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class RoomDialogueTrigger : MonoBehaviour
 {
-
-    public PrisonDoor connectedDoor;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            connectedDoor.EnterRoom();
+            // This trigger is now used only for ending events later
+            Debug.Log("Player entered ending room");
         }
     }
 }

@@ -15,8 +15,11 @@ MonoBehaviour:
   outsideDoorLines:
   - 'I was waiting '
   - 'You know why i''m here '
+  hintLines:
+  - '1 Hint: the truth only lays were you would see it '
+  - '2 Hint: If you look closely where you don''t want to something will be there
+    waiting  '
   insideRoomLines:
   - You remember now
-  HintLines:
-  - 
-  afterSolvedLines: []
+  afterSolvedLines:
+  - good job
