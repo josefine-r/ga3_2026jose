@@ -9,7 +9,7 @@ public class KeypadTrigger : MonoBehaviour
     {
         if (playerNear && Input.GetKeyDown(KeyCode.R))
         {
-            keypad.StartTyping();
+            KeypadUI.Instance.StartKeypad(keypad.connectedDoor);
         }
     }
 
