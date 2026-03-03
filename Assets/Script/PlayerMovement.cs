@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-       
+
+        if (!controller.enabled) return;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
