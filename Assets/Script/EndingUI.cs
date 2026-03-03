@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EndingUI : MonoBehaviour
 {
@@ -7,6 +8,19 @@ public class EndingUI : MonoBehaviour
 
     public GameObject panel;
     public TextMeshProUGUI endingText;
+
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit Game");
+
+    }
 
      void Awake()
     {
