@@ -13,15 +13,11 @@ MonoBehaviour:
   m_Name: Anger
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - They pushed you into this
-  - 'Anyone would have snapped '
-  - 'You were under pressure '
-  - 'They never stopped calling '
+  - 'They forced me into this  '
+  - They found us again, didn't they?.. They always do...
   hintLines:
-  - '1 Hint: You always hit the wall'
-  - '2 Hint: and left dose marks..
-
-'
+  - 'Hint for code: You always hit the wall and left those marks.. '
+  - 
   insideRoomLines:
   - 'you didn''t want to hurt anyone '
   - 'you just wanted it to stop '

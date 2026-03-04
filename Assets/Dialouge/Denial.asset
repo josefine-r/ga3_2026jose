@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
   - 'You just needed relief '
-  - It helped you relax
-  - 'You were in control '
-  - You could stop anytime
+  - It helped you relax even tough you could stop anytime
   hintLines:
-  - 'Hint: The Static was so loud '
-  - '2 hint: but when you listen closley they would say something '
+  - 'Hint for code: The Static was so loud but if you listen closely it will speak
+    to you  '
   insideRoomLines:
   - 'your head finally went quiet '
   - You didn't want to feel anymore

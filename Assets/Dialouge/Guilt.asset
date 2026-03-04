@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Guilt
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - 'I was waiting '
-  - 'You know why i''m here '
+  - In here they only wait, if you want the truth you need to open them...
   hintLines:
-  - '1 Hint: the truth only lays were you would see it '
-  - '2 Hint: If you look closely where you don''t want to something will be there
-    waiting  '
+  - 'Hint for code: the truth only lays were you would see it, where they are watching
+    us '
   insideRoomLines:
   - You remember now
   afterSolvedLines:

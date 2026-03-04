@@ -17,8 +17,7 @@ MonoBehaviour:
   - They would hate you
   - 'You hid the truth '
   hintLines:
-  - 1 hint do things that you don't like
-  - '2 hint: there is norhing worng being broken is there? '
+  - 'Hint for code: go and hide where no one can get inside, like you always do '
   insideRoomLines:
   - 'you didn''t recognize yourself '
   - You could't look

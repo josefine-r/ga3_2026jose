@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        ShowLine("Can you hear me?");
+        ShowLine("");
     }
 
     private void Awake()

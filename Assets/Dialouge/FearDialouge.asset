@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: FearDialouge
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - They followed you here.
-  - You heard footsteps last night.
-  - You shouldn't stand in the open.
-  - 'They always check the hallways first. '
+  - 'They followed you here, you heard them too right '
+  - 'You shouldn''t stand in the open. they always check the hallways first. '
   hintLines:
-  - '1 Hint: You always looked out the window'
-  - '2 Hint: And somethime you could see it '
-  - '3 Hint: only if you looked closely '
+  - 'Hint for code: You always looked out the window, but if you look closely you
+    will se it hiding '
   insideRoomLines:
   - You didn't sleep that night
   - every sound woke you up

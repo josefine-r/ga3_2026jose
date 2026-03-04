@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: Sadness
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - You stopped answering messages
-  - You avoided everyone
-  - 'You didn''t want them to worry '
-  - 'You stayed alone '
+  - 'They tried to help you, but you told them you were busy '
   hintLines:
-  - '1 hint: When sad times give you something to think about'
-  - '2 Hint: water to have memories '
+  - 'Hint for Code: sometimes you just need to make it fall like water in a sink '
   insideRoomLines:
   - 'You felt empty '
   - 'You didn''t care anymore '

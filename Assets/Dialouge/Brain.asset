@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brain
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - I wonder How's brain it is?
+  - I wonder How's brain this  is?
+  hintLines: []
   insideRoomLines: []
-  HintLines: []
   afterSolvedLines: []
