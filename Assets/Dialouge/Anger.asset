@@ -17,11 +17,8 @@ MonoBehaviour:
   - They found us again, didn't they?.. They always do...
   hintLines:
   - 'Hint for code: You always hit the wall and left those marks.. '
-  - 
   insideRoomLines:
   - 'you didn''t want to hurt anyone '
   - 'you just wanted it to stop '
-  - 'The noise would''t stop. '
   afterSolvedLines:
-  - 'You weren''t angry at them '
-  - you were angry at yourself
+  - You weren't angry at them. You were angry at yourself.

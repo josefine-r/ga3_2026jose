@@ -16,11 +16,10 @@ MonoBehaviour:
   - 'We can still fix it. We just need to do it diffrently this time. We can still
     go back '
   hintLines:
-  - "Hint for code: Regret hurts more than fear\n "
+  - "Hint for code: sometimes stories can tell the answer we seek.\n "
   insideRoomLines:
   - 'The phone was ringing '
   - 'You saw the name '
   - You waited
   afterSolvedLines:
-  - You had time
-  - You chose not to answer
+  - Maybe. but you can't change the past.

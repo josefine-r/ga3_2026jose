@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Hope
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - 'You came back, that means something. You didn''t give up completely  '
+  - 'You came back, that means something. You didn''t give up completely, right? '
   hintLines:
-  - 'Hint for Code: Follow what feelis real. not safe but real. The exit hurts to
-    look at...'
+  - 'Hint for Code: The exit hurts to look at...'
   insideRoomLines:
   - 'you''re still here '
   - 'You can still change '
   afterSolvedLines:
-  - 'You can face it '
+  - You can face it.

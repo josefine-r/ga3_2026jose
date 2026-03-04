@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
   m_Name: SadnessQuestion
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
-  questionText: Was it easier to be alone?
-  optionA: Yes
+  questionText: Was it worth ending up alone?
+  optionA: Yes it was
   optionB: No, i needed help
   emotionA: 3
   emotionB: 6

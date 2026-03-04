@@ -15,11 +15,10 @@ MonoBehaviour:
   outsideDoorLines:
   - 'They tried to help you, but you told them you were busy '
   hintLines:
-  - 'Hint for Code: sometimes you just need to make it fall like water in a sink '
+  - 'Hint for Code: He''s been sitting there for a long time.. '
   insideRoomLines:
   - 'You felt empty '
   - 'You didn''t care anymore '
   - 'Nothing mattered that night '
   afterSolvedLines:
-  - 'You weren''t tired '
-  - You were giving up
+  - 'At the time, it felt like the only choice '

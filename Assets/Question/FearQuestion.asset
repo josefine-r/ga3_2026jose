@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
   m_Name: FearQuestion
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
-  questionText: When you heard knocking late at night... what did you feel?
+  questionText: When you heard the knocking... what did you do?
   optionA: 'I hid and stayed quiet '
   optionB: i checked who it was
   emotionA: 0

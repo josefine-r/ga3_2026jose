@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb320ffbd60844ca61c19fa8de407c, type: 3}
   m_Name: GuiltQuestion
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerQuestion
-  questionText: Should you have answered the call?
+  questionText: Was it really a good idea that you spent all that money?
   optionA: Yes.
   optionB: No.
   emotionA: 7

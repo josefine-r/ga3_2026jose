@@ -13,15 +13,14 @@ MonoBehaviour:
   m_Name: Denial
   m_EditorClassIdentifier: Assembly-CSharp::PrisonerDialouge/PrisonerDialogue
   outsideDoorLines:
-  - 'You just needed relief '
-  - It helped you relax even tough you could stop anytime
+  - 'We just needed to escape '
+  - It helped us relax even tough we could stop anytime
   hintLines:
-  - 'Hint for code: The Static was so loud but if you listen closely it will speak
-    to you  '
+  - 'Hint for code: The buzzing is loud. look carefully and it will show you.. just
+    don''t get too close or it will hurt you.  '
   insideRoomLines:
   - 'your head finally went quiet '
   - You didn't want to feel anymore
   - 'you just wanted sleep '
   afterSolvedLines:
-  - 'You knew what you were doing '
-  - You just didn't want to admit it.
+  - 'You knew what you were doing. You just didn''t want to admit it.  '

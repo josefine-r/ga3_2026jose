@@ -17,10 +17,9 @@ MonoBehaviour:
   - They would hate you
   - 'You hid the truth '
   hintLines:
-  - 'Hint for code: go and hide where no one can get inside, like you always do '
+  - 'Hint for code: sometimes you have to look in the dirtiest place to find it.  '
   insideRoomLines:
   - 'you didn''t recognize yourself '
   - You could't look
   afterSolvedLines:
   - You were afraid of their judgment
-  - 'More than your own '
